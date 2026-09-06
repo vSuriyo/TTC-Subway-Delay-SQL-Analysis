@@ -90,11 +90,9 @@ Incident code reference:
 
 ## Skills Demonstrated
 
-- **SQL (MySQL/MariaDB):** CTEs, window functions (`RANK`, `LAG`, `LEAD`, cumulative `SUM() OVER`), `CASE`-based transformations, transactions, string cleaning (`TRIM`, `COALESCE`, `UPPER`, pattern matching), `NULLIF` for safe division
+- **SQL (MySQL/MariaDB):** CTEs, window functions (`RANK`, `LAG`, `LEAD`, cumulative `SUM() OVER`), `CASE`-based, transactions, string cleaning (`TRIM`, `COALESCE`, `UPPER`, pattern matching), `NULLIF` for safe division
 - **Data quality & cleaning:** completeness auditing, evidence-based missing-value imputation, categorical standardization, staging-table workflow to protect raw data
 - **Analysis:** trend analysis, ranking/segmentation, root-cause analysis, Pareto (80/20) analysis
-- **Communication:** translating query output into stakeholder-relevant findings and recommendations
-
 
 ## About This Project
 
