@@ -36,7 +36,7 @@ The work is split into three stages — database setup, data cleaning, and explo
 Loaded the raw CSV into a `_raw` table matching the source schema, then built a `stg_subway` staging table so all cleaning happens on a working copy — the raw import stays untouched as a reference point.
 
 ### 2. Data Cleaning
-Started with a completeness audit across all 11 columns. Every field was fully populated except two: `bound` (14,179 blank, ~35%) and `line` (143 blank, ~0.4%).
+Started with a completeness audit across all 10 columns. Every field was fully populated except two: `bound` (14,179 blank, ~35%) and `line` (143 blank, ~0.4%).
 
 - **`line`:** Cross-referenced the blank rows against `incident_code` and `min_delay`. All but 2 of the 143 had zero recorded delay — safe to drop as noise. The remaining 2 were fixed by hand, using the reporting station to infer the correct subway line.
 - **`bound`:** Discover that approximately 97% of delay-minutes among the top 15 incident came from incidents that halt service in *both* directions. Used that pattern together with the `line` column to impute the missing direction (Yonge–University → N/S, Bloor–Danforth/Sheppard → W/E) inside a transaction code, then manually resolved the small number of leftover cases (2 rows).
